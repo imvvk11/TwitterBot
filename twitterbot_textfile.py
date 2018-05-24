@@ -1,4 +1,5 @@
-# Import Twitter credentials from credentials.py
+
+#import tweepy library
 import tweepy
 from time import sleep
 
@@ -21,6 +22,7 @@ file_lines = my_file.readlines()
 # Close file
 my_file.close()
 
+#uncomment below lines to tweet from reading the text file
 """def tweet():
     for line in file_lines:
         try:
@@ -36,8 +38,10 @@ my_file.close()
 tweet()
 """
 
-
+#wrrite any trending topics in tweepy.Cursor(api.search, q='#FuelChallenge')
+q='#topicname'
 for tweet in tweepy.Cursor(api.search, q='#FuelChallenge').items():
+    # Add try ... except block to catch and output errorstweet()
     try:
         print('\nTweet by: @' + tweet.user.screen_name)
 
@@ -51,10 +55,10 @@ for tweet in tweepy.Cursor(api.search, q='#FuelChallenge').items():
         tweet.favorite()
         print('Favorited the tweet')
 
-        # Follow the user who tweeted
-        #if not tweet.user.following:
-        #tweet.user.follow()
-        #print('Followed the user')"""
+        #Follow the user who tweeted
+        if not tweet.user.following:
+            tweet.user.follow()
+            print('Followed the user')
 
         sleep(5)
 
@@ -63,5 +67,5 @@ for tweet in tweepy.Cursor(api.search, q='#FuelChallenge').items():
 
     except StopIteration:
         break
-# Add try ... except block to catch and output errorstweet()
+
 
