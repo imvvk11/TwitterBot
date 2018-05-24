@@ -3,10 +3,10 @@ import tweepy
 from time import sleep
 
 
-consumer_key='TDRWjqgwW6Fm1W3OTIQw4XUXo'
-consumer_secret='UfI9T4pXhDe8rg36YfdIGhwDGgMeRXr6El6SHNOAaB0K8RTt3j'
-access_token='124465949-q7qyxYZjNXgwv6KuuBkvdfKPJIW3LpQI5o7DdLbz'
-access_token_secret='6WerViHO4w21Q3dLAlrI3PAXPd86H0LqV2XoTOJ8MPqPF'
+consumer_key='your consumer key'
+consumer_secret='your consumer secret'
+access_token='your access token'
+access_token_secret='your access secret'
 # Access and authorize Twitter credentials from credentials.py
 auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
